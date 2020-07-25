@@ -24,40 +24,41 @@ describe('Isogram', () => {
 
     let word 
 
-    test('checker method returns a string', () => {
+    // test('checker method returns a string', () => {
 
-     word = new Isogram();
+    //  word = new Isogram();
 
-    expect(word.checker("a")).toEqual(true);
-    })
+    // expect(word.checker("a")).toBe(true);
+    // })
 
 
 
-    test('ignore upper/lowercase rules', () => {
-        word = new Isogram();
+    // test('ignore upper/lowercase rules', () => {
+    //     word = new Isogram();
 
-        expect(word.checker("A")).toEqual(true); 
-    })
+    //     expect(word.checker("A")).toBe(true); 
+    // })
 
 
     test('word is an isogram', () => {
         word = new Isogram();
 
-        expect(word.checker("abc")).toEqual(true)
+        expect(word.checker("abc")).toBe(true)
     });
+
 
 
     test('word is not an isogram', () => {
         word = new Isogram();
 
-        expect(word.checker("oo")).toEqual(false)
+        expect(word.checker("hello")).toBe(false)
     })
 
 
     test('word is not an isogram', () => {
         word = new Isogram();
 
-        expect(word.checker("obobo")).toEqual(false)
+        expect(word.checker("obobo")).toBe(false)
     })
 
 })
