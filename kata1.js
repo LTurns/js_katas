@@ -14,6 +14,8 @@ class Isogram {
           if(checkLetters.indexOf(letter) === -1) {
             checkLetters.push(letter);
           }
+
+        //   useful syntax to use when pushing unique elements into a new array
         });
       
         /* Now we have two arrays. If the letters array has non-duplicate letters then 
