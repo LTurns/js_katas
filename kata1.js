@@ -1,42 +1,30 @@
 class Isogram {
 
-  checker(a){
+    checker(str){
 
-    let word = a.split("");
-
-    // have partnering iterations and compare the two 
-
-    for (let i = 0; i < word.length; i++) {
-        // console.log("outer iteration");
-        // console.log(word[i]);
-
-        for (var f = i; f < word.length; f++) {
-
-            if (i != f) {
-
-            if (word[i] == word[f]){
-                //   console.log(word[i])
-                //   console.log(word[f])
-                  return false; 
-             } else {
-                 return true;
-             }
-        }
-
-        // for(let f = 0; f < word.length; f++){
-            // console.log("inner iteraction");
-            // console.log(word[f]);
-    
-        //     if (word[i] != word[f]){
-        //    // If the letter being iterated is not the same 
-        //     // as the outer letter
-
-             
-
-        }
-
-    }
-
+        // Turn all letters of the string to lower case and split it into an array. 
+      
+        var letters = str.toLowerCase().split('');
+        var checkLetters = [];
+        
+        /* Check to see if the letter appears in the checkLetters array.
+           If the letter is not already in the array it will push the letter into it. */
+      
+        letters.forEach(function(letter) {
+          if(checkLetters.indexOf(letter) === -1) {
+            checkLetters.push(letter);
+          }
+        });
+      
+        /* Now we have two arrays. If the letters array has non-duplicate letters then 
+           it will be the same length as the checkLetters array. If not, the checkLetters array
+           will be shorter. */
+      
+        /* Return true or false depending on whether the lengths of both arrays are equal */
+          
+        return letters.length === checkLetters.length ? true : false;
+      
+      }
     }
 
 
@@ -51,8 +39,6 @@ class Isogram {
         // // console.log(word[i + 1])
 
         // }
-
-}
 
 module.exports = Isogram;
 
