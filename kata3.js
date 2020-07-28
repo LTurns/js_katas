@@ -9,19 +9,61 @@
 // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 =  11
 
 
-class Sum {
 
-    add(a) {
-    var digits = a.toString().split("").map(Number);
+function sumDigits(num) {
 
-    if (digits.length = 1){
-        console.log(a);
-        return (a);
-    } else {
-        digits.forEach(function (item) {
-            console.log(item += item);
-          });
+    var numStr = num.toString()
+    var numArr = numStr.split('').map(Number);
+  
+    function sumHelper(arr) {
+      // Base case:
+      if (arr.length === 1) {
+        return arr[0];
+      }
+  
+      // Otherwise recurse (return last number plus the sum
+      // of the remainder):
+      return arr.pop() + sumHelper(arr);
     }
+  
+    // Then use that recursive helper:
+    return sumHelper(numArr);
+  }
+  
+  console.log(sumDigits(1234))
+
+// class Sum {
+
+//     add(a) {
+
+//     var digits = a.toString().split("").map(Number);
+
+//     if (digits.length > 1){
+//         var sum = digits.reduce(function(a, b){
+//            var result = (a + b);
+
+//            if (result.toString().split("").map(Number).length > 1){
+//             var addition = result.reduce(function(a, b){
+//                 return (total = (a + b));
+//            });
+
+//         } else {
+//                return(sum);
+//            }
+
+//         });
+//     }
+
+
+
+
+
+
+
+
+
+
+
 
     // for (var i = 0; i < digits.length; i ++){
 
